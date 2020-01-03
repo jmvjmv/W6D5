@@ -1,0 +1,35 @@
+
+
+<form action = "<%= cats_url %>" method = "POST">
+
+    <label for = "name"> Name </label>
+    <input id = "name" type = "text", name = "_method", >
+
+
+   
+    <input type = "radio" name= "gender" value = "male"> Male
+    <input type = "radio" name= "gender" value = "female"> Female
+
+
+  <label for="color">Color</label>
+  <select id="color" name="cat[color]">
+    <option disabled selected >-- Please Select --</option>
+    
+    <% Cat::COLORS.each do |color|%>
+        <option <%= cat.color = color ? "selected" : '' %> > <%= color %> </option>
+    <% end %>
+  </select>
+
+
+    <label for = "cat_birth_date"> Birth Date </label>
+    <input id = "cat_birth_date" type="date" name = "cat[birth_date]" >
+
+    <label for = "desc"> Description </form>
+    <textarea id = "desc" name = "cat[description]"> <%= cat.description %> </textarea>
+
+
+
+</form>
+
+
+<!-- <%= cat.color ? "" : "selected"% -->
